@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="text-center">
+
+    <h1>Create your own group</h1>
+
+    <%= simple_form_for(@group) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+
+
+
+        <%= f.input :name %>
+        <%= f.input :photo, label: false %>
+        <%= f.input :photo_cache, as: :hidden%>
+
+
+
+        <%= f.button :submit, class: 'btn btn-primary'%>
+
+      </div>
+
+    </div>
+    <% end %>
+  </div>
+</div>

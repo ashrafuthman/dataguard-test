@@ -1,0 +1,39 @@
+ <div>
+ <div>
+   <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://media-exp1.licdn.com/dms/image/C4D1BAQEQElL9CMzkwg/company-background_10000/0?e=1603724400&v=beta&t=CY3U36mSsVa-SLDTQksLnWjyE1WzK8Of9atxSPXEeHQ');">
+    <div class="banner-content">
+      <h1>Data Guard Groups Generator</h1>
+      <p>
+        <span id="banner-typed-text"></span>
+      </p>
+      <div>
+       <button type="button" class="btn btn-info" data-toggle="modal" data-target=".bs-example-modal-sm">How to use?</button>
+
+       <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabell">
+        <div class="modal-dialog modal-sm" role="document">
+          <div class="modal-content font">
+            <ol>
+              <li>
+                Click New Group
+              </li>
+              <li>
+                Add the employees of your group
+              </li>
+              <li>
+                You have your group on the website
+              </li>
+              <li>
+                Click on "Choose Group" to see which group will go out next
+              </li>
+               <h5 class="font" style="font-weight: bolder;">Press the Logo on the top to go back to the home page</h3>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%= link_to 'New Group',new_group_path, class: 'btn btn-success' %>
+    <%= link_to 'Choose Group', group_path(@groups.shuffle.first), class: 'btn btn-primary' %>
+  </div>
+</div>
+</div>
+</div>

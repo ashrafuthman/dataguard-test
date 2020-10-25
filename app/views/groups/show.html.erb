@@ -1,0 +1,58 @@
+<div class="wrapper">
+  <div class="container">
+    <div class="text-center">
+      <div class="title-photo">
+        <h1 style="color: black;"><%= @group.name %></h1>
+
+        <div class="card card-link card-show img-rad"
+        style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+        url(https://media-exp1.licdn.com/dms/image/C560BAQEFI1_beVvTkQ/company-logo_200_200/0?e=1611792000&v=beta&t=OMML-nqVpisyaiQw6q1qSJ8_nUIObhTiPtBql19PdFc)">
+        </div>
+      </div>
+      <br>
+
+      <div class="employees-t">
+       <table>
+        <div class="thead">
+          <tr>
+            <th>
+              <h4>
+                Team
+              </h4>
+            </th>
+            <th>
+              <h4>
+                Employee
+              </h4>
+            </th>
+          </tr>
+        </div>
+        <tbody class="t-body">
+        <% @group.employees.each do |employee| %>
+        <div class="tdetails">
+          <tr>
+            <td>
+              <h5> <%= employee.team.name %></h5>
+            </td>
+            <td>
+              <h5>
+               <%= employee.description %> <%= link_to group_employee_path(@group, employee),
+               method: :delete,
+               data: { confirm: "Are you sure?" }, class: 'link' do%>
+               <i class="fas fa-trash-alt delete-employee"></i>
+               <% end %>
+             </h5>
+           </td>
+           <% end %>
+         </tr>
+       </div>
+        </tbody>
+     </table>
+   </div>
+   <hr>
+   <%= link_to "Add employees to your group", new_group_employee_path(@group), class: 'btn btn-success' %>
+   <hr>
+   <%= link_to "Back to the list", groups_path, class: 'link2' %>
+ </div>
+</div>
+</div>

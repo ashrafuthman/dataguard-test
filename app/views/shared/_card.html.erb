@@ -1,0 +1,19 @@
+
+  <div class="container">
+    <div class="row">
+        <% @groups.each do |c| %>
+           <%= link_to group_path(c) do %>
+          <div class="col-xs-12 col-sm-6 col-md-3">
+           <div class="card card-link"
+           style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+           url(<%= c.photo %>)">
+            <div class="card-description">
+              <h2><%= c.name %></h2>
+            </div>
+          </div>
+        </div>
+        <% end %>
+        <% end %>
+    </div>
+</div>
+
